@@ -4,7 +4,7 @@ val english : List[String] = List("zero","one","two","three","four","five","six"
 
 
 
-val list : List[String] = List("yi","two","san","justin","mike","si","six")
+val list : List[String] = List("yi","two","ba","justin","mike","si","six")
 
 
 // This function takes in a list of strings and translates them to numbers,
@@ -34,7 +34,7 @@ def filter(s : String,list : List[String]) : List[String] = {
   list.filter(_ != s)
 }
 
-translate(list) // List(1,2,3,4,6)
+translate(list) // List(1,2,8,4,6)
 
 def add(list : List[Int]) = list.foldLeft(0)(_ + _)
 
@@ -43,11 +43,11 @@ def multiply(list : List[Int]) = list.foldLeft(1)(_ * _)
 val intList = translate(list)
 intList.mkString(",")
 
-add(intList)
-multiply(intList)
+add(intList) // = 21
+multiply(intList) // = 384
 
-go(list) // List : 1,2,3,4,6  Addition : 1 + 2 + 3 + 4 + 6 = 16
-          // Multiplication: 1 * 2 * 3 * 4 * 6 = 144
+go(list) // List : 1,2,8,4,6  Addition : 1 + 2 + 8 + 4 + 6 = 21
+          // Multiplication: 1 * 2 * 8 * 4 * 6 = 384
 
 
 
