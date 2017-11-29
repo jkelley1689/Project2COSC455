@@ -21,11 +21,11 @@ def go(list : List[String]) : Unit = {
 def translate(list : List[String]) : List[Int] = {
   list match {
     case Nil => Nil
-    case head :: tail => if(chinese.contains(head))
+    case head :: tail => if(chinese.contains(head)) //checks if the element is in the chinese list
       chinese.indexOf(head) :: translate(tail)
-    else if(english.contains(head))
+    else if(english.contains(head)) //checks if the element is is in the english list
       english.indexOf(head) :: translate(tail)
-    else translate(filter(head,list))
+    else translate(filter(head,list)) //if neither, filter the word from the list
   }
 }
 

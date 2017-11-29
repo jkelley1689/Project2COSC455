@@ -82,7 +82,12 @@ def binaryAddition(pList: List[Int], qList: List[Int]) = {
   finalResult
 }
 
-// def bindarySubtraction(pList: List[Int], qList: List[Int]) = ???
+def binarySubtraction(pList: List[Int], qList: List[Int]) = {
+  1 +: binaryAddition(pList, complement(qList)).drop(Math.abs(pList.length - qList.length))
+}
+
+def complement(aList: List[Int]): List[Int] = binaryAddition(convertBooleanListToIntList(convertIntListToBooleanList(aList).map(x => !x)), List(1))
+
 
 // Testing binary addition.
 if (binaryAddition(pTest1, qTest1).equals(test1ExectedSolution)) println("Test 1 passes!") else println("Test 1 fails.")
@@ -91,6 +96,7 @@ if (binaryAddition(pTest3, qTest3).equals(test3ExectedSolution)) println("Test 3
 if (binaryAddition(pTest4, qTest4).equals(test4ExectedSolution)) println("Test 4 passes!") else println("Test 4 fails.")
 
 // Testing binary subtraction.
-//if (binarySubtraction(pTest2, qTest2).equals(test5ExectedSolution)) println("Test 5 passes!") else println("Test 5 fails.")
-//if (binarySubtraction(pTest4, qTest4).equals(test6ExectedSolution)) println("Test 6 passes!") else println("Test 6 fails.")
+if (binarySubtraction(pTest2, qTest2).equals(test5ExectedSolution)) println("Test 5 passes!") else println("Test 5 fails.")
+if (binarySubtraction(pTest4, qTest4).equals(test6ExectedSolution)) println("Test 6 passes!") else println("Test 6 fails.")
+
 
